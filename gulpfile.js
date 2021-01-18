@@ -38,13 +38,16 @@ function watchArchivos() {
 function css(done) {
     return src('src/scss/app.scss')
     .pipe( sass())
+    .pipe( sass({
+        outputStyle: 'expanded'
+    }))
     .pipe( dest('./build/css'))
 }
 
 function minificarCss() {
     return src ('src/scss/app.scss')
     .pipe( sass({
-        outputStyle: 'expanded'
+        outputStyle: 'compressed'
     }))
     .pipe( dest('./build/css'))
 }

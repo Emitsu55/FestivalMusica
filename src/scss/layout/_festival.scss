@@ -1,0 +1,31 @@
+.sobre_festival {
+    padding: $separacion 0;
+    @include tablet {
+        @include grid(2, $separacion);
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+    p {
+        color: $negro;
+        margin: 0;
+    }
+
+    .fecha {
+        color: $rosa;
+        font-weight: $bold;
+        margin-bottom: $separacion;
+        margin-top: 2rem;
+    }
+
+    .contenido_festival {
+        padding: 2rem;
+    }
+
+
+}
+
+
+

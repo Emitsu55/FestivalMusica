@@ -41,7 +41,7 @@ const paths = {
 //funciones
 
 function watchArchivos() {
-    watch(paths.scss); // '**' refiere a todas las carpetas  
+    watch(paths.scss, css); // '**' refiere a todas las carpetas  
 }
 
 function css(done) {

@@ -29,19 +29,23 @@ exports.tareas = series(css, javascript); //Ejecuta en serie las funciones pasad
  const sass = require('gulp-sass');
  const imagemin = require('gulp-imagemin');
  const notify = require('gulp-notify');
- const webpimg = require('gulp-webp');
+ const webp = require('gulp-webp');
+ const concat = require('gulp-concat');
 
 //  Paths
 const paths = {
-    imagenes : 'src/img/**/+',
-    scss : 'src/scss/**/*.scss'
+    imagenes : 'src/img/**/*',
+    scss : 'src/scss/**/*.scss',
+    js: 'src/js/**/*.js'
+
 }
 
 
 //funciones
 
 function watchArchivos() {
-    watch(paths.scss, css); // '**' refiere a todas las carpetas  
+    watch(paths.scss, css); // '**' refiere a todas las carpetas 
+    watch(paths.js, javascript); 
 }
 
 function css(done) {
@@ -63,6 +67,13 @@ function minificarCss() {
     .pipe(notify({ message: 'Codigo CSS Minificado'}));
 }
 
+function javascript() {
+    return src (paths.js)
+    .pipe(concat('bundle.js'))
+    .pipe(dest('./build/js'))
+    .pipe(notify({message: "Javascript compilado"}));
+}
+
 function imagenes() {
     return src(paths.imagenes)
     .pipe( imagemin())
@@ -70,11 +81,11 @@ function imagenes() {
     .pipe(notify({ message: 'Imagen minificadas'}));
 }
 
-function versionWebp(){
+function versionWebp() {
     return src(paths.imagenes)
-    .pipe(webpimg())
-    .pipe(dest('./build/img'))
-    .pipe(notify({ message: 'version webp lista'}));
+        .pipe( webp() )
+        .pipe( dest('./build/img'))
+        .pipe( notify({message: 'Versión webP lista'}));
 }
 
 //Tareas
@@ -82,5 +93,6 @@ exports.css = css;
 exports.minificarCss = minificarCss;
 exports.watchArchivos = watchArchivos;
 exports.imagenes = imagenes;
-exports.versionWebp =versionWebp;
+exports.versionWebp = versionWebp;
+exports.javascript = javascript;
 // exports.default = series (css, imagenes, watchArchivos); ejecuta en serie todas esas funciones se manda a llamar con 'gulp'

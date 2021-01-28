@@ -352,6 +352,10 @@ body {
   font-size: 1.6rem;
 }
 
+body.fijar-body {
+  overflow: hidden;
+}
+
 p {
   font-size: 2rem;
   color: black;
@@ -385,6 +389,14 @@ h2 {
 
 h3 {
   font-size: 3rem;
+}
+
+.bg-amarillo {
+  background-color: #fef46d;
+}
+
+.bg-verde {
+  background-color: #4cb8b3;
 }
 
 .header {
@@ -586,10 +598,62 @@ h3 {
   background-color: #fdec08;
 }
 
-.bg-amarillo {
-  background-color: #fef46d;
+.galeria {
+  text-align: center;
+  padding-top: 5rem;
 }
 
-.bg-verde {
-  background-color: #4cb8b3;
+.galeria h3 {
+  margin-bottom: 5rem;
+}
+
+.galeria-imagenes {
+  margin-top: 5rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: grid;
+  place-items: center;
+}
+
+.btn-cerrar {
+  width: 5rem;
+  height: 5rem;
+  background-color: #ffff;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.btn-cerrar:hover {
+  background-color: #fef46d;
+  cursor: pointer;
 }

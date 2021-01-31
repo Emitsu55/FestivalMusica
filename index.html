@@ -15,13 +15,13 @@
         <div class="contenedor contenido_header">
             <h1>Rock & EDM Festival</h1>
             <nav class="navegacion_principal">
-                <a href="#">Line Up</a>
-                <a href="#">Galeria</a>
-                <a href="#">Boletos</a>
+                <a href="#Lineup">Line Up</a>
+                <a href="#Galeria">Galeria</a>
+                <a href="#Boletos">Boletos</a>
             </nav>
         </div>
 
-    </header>
+    </header>  <!--Cierre Header-->
 
     <div class="video">
 
@@ -40,11 +40,11 @@
             <source src="video/concierto.webm" type="video/webm">
         </video>
 
-    </div>
+    </div><!--Cierre video-->
 
     <div class="sobre_festival contenedor">
         <div class="imagen">
-            <img src="src/img/imagen_vocalista.jpg" alt="vocalista">
+            <img src="build/img/imagen_vocalista.jpg" alt="vocalista">
         </div>
         <div class="contenido_festival">
             <h2>Rock & EDM Festival</h2>
@@ -53,41 +53,182 @@
                 facere quam quo ullam doloribus cum repellat architecto? Dolores atque porro quam eius explicabo
                 suscipit ipsam quo.</p>
         </div>
-    </div>
+    </div><!--Cierre sobreFestival-->
 
-    <div class="line_up">
-        <h2>Line Up</h2>
+    <section id="Lineup" class="line_up">
+        <h3>Line Up</h3>
 
-        <div class="lineUp_dia contenedor">
-            <h3>
-            viernes 21
-            </h3>
-            <div class="contenido_dias">
-                <article class="contenido_escenario">
+        <p class="dia">Viernes 21</p>
 
-                </article>
-                <article class="contenido_escenario">
+        <div class="escenarios-contenedor contenedor">
+            <div class="escenario rock bg-amarillo">
 
-                </article>
+            <p class="nombre-escenario">Escenario Rock</p>
+            <ul class="calendario" >
+                <li>24:00 | <span>Metallica</span> </li>
+                <li>22:00 | <span>Pearl Jam</span></li>
+                <li>20:00 | <span>Korn</span></li>
+                <li>19:00 | <span>Muse</span></li>
+                <li>18:00 | <span>Breakin Benjamin</span></li>
+                <li>17:00 | <span>30 Seconds to Mars</span></li>
+            </ul>
+
+            </div>
+            <div class="escenario edm bg-verde">
+
+            <p class="nombre-escenario">Escenario EDM</p>
+            <ul class="calendario" >
+                <li>24:00 | <span>Deadmau5</span></li>
+                <li>22:00 | <span>Tiësto</span></li>
+                <li>20:00 | <span>Hardwell</span></li>
+                <li>19:00 | <span>Dash Berlin</span></li>
+                <li>18:00 | <span>Fedde Legrand</span></li>
+                <li>17:00 | <span>Audien</span></li>
+            </ul>
+
+            </div>
+        </div>
+        <p class="dia">Sábado 22</p>
+
+        <div class="escenarios-contenedor contenedor">
+            <div class="escenario rock bg-verde">
+
+            <p class="nombre-escenario">Escenario Rock</p>
+            <ul class="calendario" >
+                <li>24:00 | <span>Red Hot Chili Peppers</span> </li>
+                <li>22:00 | <span>The Killers</span></li>
+                <li>20:00 | <span>Deftones</span></li>
+                <li>19:00 | <span>Limp Bizkit</span></li>
+                <li>18:00 | <span>Papa Roach</span></li>
+                <li>17:00 | <span>Lamb of god</span></li>
+            </ul>
+
+            </div>
+            <div class="escenario edm bg-amarillo">
+
+            <p class="nombre-escenario">Escenario EDM</p>
+            <ul class="calendario" >
+                <li>24:00 | <span>Paul Van Dick</span></li>
+                <li>22:00 | <span>Armin Van Buuren</span></li>
+                <li>20:00 | <span>Above & Beyond</span></li>
+                <li>19:00 | <span>Eric Prydz</span></li>
+                <li>18:00 | <span>Ferry Corsten</span></li>
+                <li>17:00 | <span>Vini Vici</span></li>
+            </ul>
+
+            </div>
+        </div>
+
+    </section> <!---Cierre Lineup-->
+
+    <section id="Galeria" class="galeria contenedor">
+        <h3>Galería</h3>
+        <ul class="galeria-imagenes">
+            
+        </ul>
+ 
+    </section><!--Cierre Galeria-->
+
+    <section id="Boletos" class="boletos bg-verde">
+
+        <h3>Boletos</h3>
+        
+        <div class="contenedor-boletos contenedor">
+
+            <div class="basico">
+                <p class="plan">Pase 1 día</p>
+                <table class="pase">
+                    <thead>
+                        <tr>
+                            <th>
+                                Incluye
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Acceso a todos los escenarios
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Comida y bebida
+                            </td>
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                $100
+                            </td>
+                        </tr>
+
+                    </tfoot>
+                </table>
+
+            </div>
+            <div class="premium">
+                <p class="plan">Pase 2 días</p>
+                <table class="pase">
+                    <thead>
+                        <tr>
+                            <th>
+                                Incluye
+                            </th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Acceso a todos los escenarios
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Comida y bebida
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Camisa del evento
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Acceso VIP
+                            </td>
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                $180
+                            </td>
+                        </tr>
+
+                    </tfoot>
+
+                </table>
+
             </div>
 
-        </div>
-        <div class="lineUp_dia contenedor">
-            <h3>
-             Sábado 22
-            </h3>
-            <div class="contenido_dias">
-                <article class="contenido_escenario">
-
-                </article>
-                <article class="contenido_escenario">
-
-                </article>
-            </div>
 
         </div>
-    </div>
 
+    </section><!--Cierre Boletos-->
+
+    <footer class="footer">
+        <p>Rock & EDM Festival. Todos los derechos reservados</p>
+        
+    </footer><!--Cierre footer-->
+
+
+<script src="build/js/bundle.min.js"></script>
 </body>
 
 </html>

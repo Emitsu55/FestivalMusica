@@ -8,7 +8,10 @@
     
 .contenedor-boletos {
     margin-top: $separacion / 2;
-    @include grid(2,$separacion);
+    @include grid(2,$separacion/2);
+    @include tablet {
+        @include grid(2,$separacion);
+    }
 
 }
 
@@ -60,7 +63,7 @@
             padding: $separacion / 4;
             color: $blanco;
             text-align: center;
-            font-size: 2rem;
+            font-size: 3rem;
 
         }
 

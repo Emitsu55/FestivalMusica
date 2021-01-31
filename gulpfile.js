@@ -32,6 +32,18 @@ exports.tareas = series(css, javascript); //Ejecuta en serie las funciones pasad
  const webp = require('gulp-webp');
  const concat = require('gulp-concat');
 
+ //Utilidades css
+
+ const autoprefixer = require('autoprefixer');  //permite agregar prefijo
+ const postcss = require('gulp-postcss');  //Agrega procesamiento al css
+ const cssnano = require('cssnano');
+ const sourcemaps = require('gulp-sourcemaps');
+
+ //Utilidades js
+
+ const terser = require('gulp-terser-js');
+ const rename = require('gulp-rename');
+
 //  Paths
 const paths = {
     imagenes : 'src/img/**/*',
@@ -50,10 +62,10 @@ function watchArchivos() {
 
 function css(done) {
     return src(paths.scss)
+    .pipe(sourcemaps.init())
     .pipe( sass())
-    .pipe( sass({
-        outputStyle: 'expanded'
-    }))
+    .pipe(postcss ([autoprefixer(), cssnano()]))
+    .pipe(sourcemaps.write('.'))
     .pipe( dest('./build/css'))
     .pipe(notify({ message: 'Codigo SASS transformado a CSS'}));
 }
@@ -69,7 +81,11 @@ function minificarCss() {
 
 function javascript() {
     return src (paths.js)
+    .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))
+    .pipe(terser())
+    .pipe(sourcemaps.write('.'))
+    .pipe(rename({suffix: '.min'}))
     .pipe(dest('./build/js'))
     .pipe(notify({message: "Javascript compilado"}));
 }

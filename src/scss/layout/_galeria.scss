@@ -27,6 +27,11 @@
     top: 0;
     display: grid;
     place-items: center;
+
+    .imagen_grande {
+        max-height: 80vh;
+
+    }
 }
 
 .btn-cerrar{

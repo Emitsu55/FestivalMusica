@@ -25,7 +25,7 @@ function mostrarImagen(e) {
      console.log(`imagen ${id} clickeada`);
      const imagen = document.createElement('IMG');
         imagen.src = `build/img/grande/${id}.webp`;
-        console.log(imagen)
+        imagen.classList.add('imagen_grande');
 
         //creando el overlay
         const overlay = document.createElement('DIV');
